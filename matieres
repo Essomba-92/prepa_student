@@ -1,0 +1,83 @@
+<!-- Contenu complet pour le nouveau fichier matieres.html -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matières Proposées - Prepa Student</title>
+
+    <!-- Ces liens sont identiques à ceux de l'index pour garder le même style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="style" rel="stylesheet">
+</head>
+
+<body>
+    <!-- On réutilise le même header -->
+    <header>
+        <div class="wrapper">
+            <h1><a href="index">PREPA STUDENT<span>.</span></a></h1>
+            <nav>
+                <ul>
+                    <li><a href="index#main-image">Accueil</a></li>
+                    <li><a href="index#steps">Nos Services</a></li>
+                    <li><a href="index#possibilities">A Propos</a></li>
+                    <li><a href="index#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SECTION PRINCIPALE DE LA PAGE -->
+    <!-- Remplacez toute la section <main> de votre fichier matieres.html -->
+
+    <!-- Remplacez la section <main> de votre fichier matieres.html par celle-ci -->
+
+    <main class="page-content page-matieres">
+        <div class="wrapper">
+            <h2>Devenez maître de chaque matière !</h2>
+
+            <div class="cadre-texte">
+                <p>Fini le casse-tête des devoirs et l'angoisse avant un contrôle ! Chez Prepa Student, nous transformons chaque matière en une aventure passionnante. Notre mission est de vous donner les clés pour décoder les chiffres, jongler avec les mots
+                    et explorer le monde qui vous entoure.</p>
+
+                <h3>L'univers des Sciences</h3>
+                <ul>
+                    <li><strong>Mathématiques :</strong> Les chiffres deviennent vos alliés.</li>
+                    <li><strong>Physique & Chimie :</strong> Découvrez les secrets de l'univers.</li>
+                    <li><strong>SVT :</strong> Explorez les merveilles de la vie.</li>
+                </ul>
+
+                <h3>La puissance des Lettres</h3>
+                <ul>
+                    <li><strong>Français :</strong> Maniez la langue avec éloquence.</li>
+                    <li><strong>Anglais :</strong> Ouvrez-vous au monde.</li>
+                    <li><strong>Philosophie :</strong> Apprenez à penser par vous-même.</li>
+                    <li><strong>Histoire-Géographie :</strong> Voyagez à travers le temps et l'espace.</li>
+                </ul>
+            </div>
+
+            <!-- DÉBUT DE LA MODIFICATION -->
+            <div class="image-container-fade">
+                <img src="images/image-matieres.jpg" alt="Illustration des matières scolaires">
+            </div>
+            <!-- FIN DE LA MODIFICATION -->
+
+            <a href="index" class="button-1">Retour à l'accueil</a>
+        </div>
+    </main>
+
+    <!-- On réutilise le même footer -->
+    <footer>
+        <div class="wrapper">
+            <p>Copyright © 2024 - PREPA STUDENT. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

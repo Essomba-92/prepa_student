@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Indispensable pour le mobile -->
+    <title>Prepa Student - L'Excellence Scolaire à Domicile</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="style" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Le header reste le même en HTML -->
+    <header>
+        <div class="wrapper">
+            <h1>PREPA STUDENT<span>.</span></h1>
+            <nav>
+                <ul>
+                    <li><a href="#main-image">Accueil</a></li>
+                    <li><a href="#steps">Nos Services</a></li>
+                    <li><a href="#possibilities">A Propos</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="main-image">
+        <div class="wrapper">
+            <div class="hero-content">
+                <h2><span>Bénéficiez</span> D'un Encadrement <br><strong>Scolaire à Domicile</strong></h2>
+                <a href="#steps" class="button-1">Découvrir nos offres</a>
+            </div>
+        </div>
+        <!-- AJOUT : L'indicateur de défilement -->
+        <a href="#steps" class="scroll-down-indicator">
+            <i class="fa-solid fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- Le reste de votre contenu reste identique -->
+    <section id="steps">
+        <!-- ... Votre section services ... -->
+        <div class="wrapper">
+            <ul>
+                <!-- MODIFIÉ : Ajout de la balise <img> pour l'icône -->
+                <li id="service-encadrement">
+                    <img src="images/icon-domicile.png" alt="Icône encadrement à domicile">
+                    <h4>Encadrement à domicile</h4>
+                    <p>Un suivi personnalisé et rigoureux pour garantir la réussite de l'élève.</p>
+                </li>
+
+                <!-- MODIFIÉ : Ajout de la balise <img> pour l'icône -->
+                <li id="service-documentation">
+                    <img src="images/icon-documentation.png" alt="Icône documentation et livres">
+                    <h4>Documentation</h4>
+                    <p>Nous mettons à votre disposition des livres et anciennes épreuves.</p>
+                </li>
+
+                <!-- MODIFIÉ : Ajout de la balise <img> pour l'icône -->
+                <li id="service-orientation">
+                    <img src="images/icon-orientation.png" alt="Icône orientation scolaire">
+                    <h4>Orientation Scolaire</h4>
+                    <p>Nous vous accompagnons dans le choix des filières et des débouchés.</p>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </section>
+    <!-- C'est la seule section à modifier dans votre index.html -->
+
+    <section id="possibilities">
+        <div class="wrapper">
+            <article id="article-allschool">
+                <div class="overlay">
+                    <h4>Notre Pédagogie</h4>
+                    <p><small>Une approche moderne et efficace, centrée sur l'excellence et la compréhension.</small></p>
+                    <!-- MODIFIÉ : Le lien pointe maintenant vers pedagogie.html -->
+                    <a href="pedagogie" class="button-2">Plus d'infos</a>
+                </div>
+            </article>
+            <article id="article-matieres">
+                <div class="overlay">
+                    <h4>Toutes les Matières</h4>
+                    <p><small>Nous intervenons dans toutes les matières, scientifiques comme littéraires.</small></p>
+                    <!-- MODIFIÉ : Le lien pointe maintenant vers matieres.html -->
+                    <a href="matieres" class="button-2">Plus d'infos</a>
+                </div>
+            </article>
+            <div class="clear"></div>
+        </div>
+    </section>
+    <!-- C'est la seule section que vous devez modifier dans index.html -->
+
+    <section id="contact">
+        <div class="wrapper">
+            <h3>Contact</h3>
+            <div class="contact-info">
+                <!-- MODIFIÉ : Ajout des liens <a> pour les numéros -->
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    <a href="tel:+237652655521">652655521</a> / <a href="tel:+237655447769">655447769</a>
+                </p>
+
+                <!-- MODIFIÉ : Ajout du lien <a> pour l'e-mail avec un sujet pré-rempli -->
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="mailto:aegstudent544@gmail.com?subject=Demande%20d'informations%20-%20Prepa%20Student">aegstudent544@gmail.com</a>
+                </p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <!-- ... Votre footer ... -->
+        <div class="wrapper">
+            <p>Copyright © 2024 - PREPA STUDENT. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- AJOUT : Le script pour le header intelligent, à placer ici -->
+    <script>
+        const header = document.querySelector('header');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) { // Si on a défilé de plus de 50 pixels
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+</body>
+
+</html>

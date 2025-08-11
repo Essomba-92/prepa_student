@@ -1,0 +1,633 @@
+/* --- VARIABLES DE COULEURS ET POLICES --- */
+
+:root {
+    --bleu-nuit: #0D061A;
+    --bleu-electrique: #1E105C;
+    --rouge-vif: #F9072B;
+    --blanc: #FFFFFF;
+    --gris-clair-fond: #f4f4f4;
+    --gris-texte: #333;
+    --font-principale: 'Poppins', sans-serif;
+    --font-accent: 'Pacifico', cursive;
+}
+
+
+/* --- RÉINITIALISATION ET STYLES GÉNÉRAUX --- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-principale);
+    font-size: 16px;
+    background: linear-gradient(135deg, var(--bleu-nuit) 0%, var(--bleu-electrique) 100%);
+    color: var(--blanc);
+}
+
+.wrapper {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 900;
+}
+
+h1 span {
+    color: var(--rouge-vif);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.clear {
+    clear: both;
+}
+
+//* --- HEADER --- */
+header {
+    padding: 25px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    /* Ajoute une ligne de séparation subtile */
+}
+
+
+/* NOUVEAU : On utilise Flexbox pour l'alignement */
+
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    /* Le float n'est plus nécessaire */
+}
+
+header nav {
+    /* Le float et le margin-top ne sont plus nécessaires */
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-left: 30px;
+    /* Un peu plus d'espace */
+}
+
+header nav ul li a {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: var(--rouge-vif);
+}
+
+
+/* --- SECTION ACCUEIL (#main-image) --- */
+
+
+/* Définition des animations d'entrée */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+#main-image {
+    /* MODIFIÉ : Occupe 100% de la hauteur de la fenêtre */
+    height: 100vh;
+    min-height: 700px;
+    /* Hauteur minimum pour les écrans moins hauts */
+    /* MODIFIÉ : On aligne le contenu sur la gauche */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* Aligne sur la GAUCHE */
+    text-align: left;
+    /* Aligne le texte sur la GAUCHE */
+    position: relative;
+    overflow: hidden;
+}
+
+#main-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/image_de_fond.jpg') no-repeat center center;
+    background-size: cover;
+    /* On garde l'animation de vagues, elle est parfaite */
+    animation: subtleWaveAnimation 25s ease-in-out infinite alternate;
+}
+
+#main-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* MODIFIÉ : Dégradé pour assombrir la gauche et laisser la droite plus visible */
+    background: linear-gradient(to right, rgba(13, 6, 26, 0.8) 30%, rgba(13, 6, 26, 0.2) 100%);
+    z-index: 1;
+}
+
+#main-image .wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* On anime le contenu */
+
+.hero-content h2 {
+    font-size: 56px;
+    font-weight: 900;
+    line-height: 1.2;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    animation: slideUp 1s ease-out forwards;
+}
+
+.hero-content h2 span {
+    font-family: var(--font-accent);
+    color: var(--rouge-vif);
+    font-weight: normal;
+    font-size: 72px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+/* On anime le bouton avec un délai */
+
+.hero-content .button-1 {
+    padding: 18px 40px;
+    font-size: 16px;
+    margin-top: 40px;
+    opacity: 0;
+    /* Invisible au début */
+    animation: slideUp 1s ease-out 0.5s forwards;
+    /* 0.5s de délai */
+}
+
+.hero-content .button-1:hover {
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 10px 20px rgba(249, 7, 43, 0.3);
+}
+
+
+/* NOUVEAU : Style de l'indicateur de défilement */
+
+.scroll-down-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 24px;
+    animation: bounce 2s infinite;
+}
+
+.scroll-down-indicator:hover {
+    color: var(--blanc);
+}
+
+
+/* --- SECTION SERVICES (#steps) --- */
+
+#steps {
+    /* SUPPRIMÉ : Fini le fond gris ! On laisse le dégradé du body. */
+    padding: 100px 0;
+    /* Plus d'espace pour que la section respire */
+    position: relative;
+    /* Contexte pour les effets futurs */
+}
+
+#steps ul {
+    display: flex;
+    justify-content: center;
+    /* On centre les cartes */
+    gap: 40px;
+    /* Espace plus généreux entre les cartes */
+}
+
+
+/* C'est ici que la magie opère : la carte de verre */
+
+#steps ul li {
+    flex-basis: 30%;
+    padding: 40px 30px;
+    text-align: center;
+    /* Le fond de verre */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    /* L'effet de verre dépoli ! */
+    -webkit-backdrop-filter: blur(10px);
+    /* Pour la compatibilité Safari */
+    /* La bordure subtile */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    /* Coins arrondis plus doux */
+    /* L'effet de survol */
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+
+/* L'EFFET "FUN" AU SURVOL */
+
+#steps ul li:hover {
+    transform: translateY(-10px);
+    /* La carte se soulève */
+    border-color: var(--rouge-vif);
+    /* La bordure s'illumine en rouge */
+}
+
+#steps ul li img {
+    height: 60px;
+    margin-bottom: 30px;
+}
+
+#steps h4 {
+    /* Le titre est maintenant en blanc pour contraster avec le fond sombre */
+    color: var(--blanc);
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+#steps p {
+    /* Le texte de description est légèrement moins blanc pour la hiérarchie visuelle */
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* CHEMINS IMAGES CONFIRMÉS */
+
+#service-encadrement {
+    background: url('images/icon-domicile.png') no-repeat top center;
+}
+
+#service-documentation {
+    background: url('images/icon-documentation.png') no-repeat top center;
+}
+
+#service-orientation {
+    background: url('images/icon-orientation.png') no-repeat top center;
+}
+
+
+/* --- SECTION À PROPOS (#possibilities) --- */
+
+#possibilities {
+    padding: 80px 0;
+}
+
+#possibilities article {
+    width: 48%;
+    height: 300px;
+    float: left;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#possibilities article:first-child {
+    margin-right: 4%;
+}
+
+
+/* CHEMINS IMAGES CONFIRMÉS */
+
+#article-allschool {
+    background-image: url('images/image-pedagogie.jpg');
+}
+
+#article-matieres {
+    background-image: url('images/image-matieres.jpg');
+}
+
+#possibilities .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    opacity: 1;
+    background: linear-gradient(to top, rgba(13, 6, 26, 0.95) 50%, transparent 100%);
+    color: var(--blanc);
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#possibilities .overlay h4 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--rouge-vif);
+    padding-bottom: 10px;
+}
+
+.button-2 {
+    color: var(--blanc);
+    background-color: transparent;
+    border: 2px solid var(--rouge-vif);
+    padding: 10px 25px;
+    border-radius: 5px;
+    margin-top: 20px;
+    display: inline-block;
+    font-weight: 700;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button-2:hover {
+    background-color: var(--rouge-vif);
+    color: var(--blanc);
+}
+
+
+/* --- SECTION CONTACT ET FOOTER --- */
+
+#contact {
+    /* CHANGÉ : On passe du gris clair au bleu nuit principal */
+    background-color: var(--bleu-nuit);
+    /* CHANGÉ : Le texte devient blanc pour être lisible sur le fond sombre */
+    color: var(--blanc);
+    padding: 80px 0;
+    /* J'ai augmenté un peu le padding pour plus d'impact visuel */
+    text-align: center;
+}
+
+#contact h3 {
+    font-size: 36px;
+    /* On agrandit le titre "Contact" */
+    /* On change la couleur qui était sombre pour du blanc (hérité) */
+    /* et on ajoute un soulignement rouge pour la cohérence visuelle */
+    padding-bottom: 15px;
+    margin-bottom: 40px;
+    border-bottom: 3px solid var(--rouge-vif);
+    /* Permet au soulignement de ne prendre que la largeur du mot */
+    display: inline-block;
+}
+
+.contact-info p {
+    font-size: 22px;
+    /* On agrandit le numéro et l'email pour une meilleure lisibilité */
+    margin-bottom: 20px;
+}
+
+.contact-info .fa-solid {
+    /* Cette règle est déjà parfaite. Le rouge va magnifiquement ressortir sur le fond sombre */
+    color: var(--rouge-vif);
+    margin-right: 15px;
+    /* Un peu plus d'espace entre l'icône et le texte */
+}
+
+
+/* On ajuste le footer pour qu'il se distingue légèrement de la nouvelle section contact */
+
+footer {
+    background-color: #080310;
+    /* Un noir très légèrement différent du bleu nuit */
+    color: rgba(255, 255, 255, 0.6);
+    /* Texte un peu plus discret */
+    padding: 25px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+/* --- AJOUT POUR LES LIENS DE CONTACT --- */
+
+#contact .contact-info a:hover {
+    text-decoration: underline;
+}
+
+
+/* --- STYLES POUR LES PAGES DE CONTENU --- */
+
+.page-content {
+    /* SUPPRIMÉ : background-color et color pour hériter du body */
+    padding: 80px 0;
+}
+
+.page-content h2 {
+    text-align: center;
+    color: var(--blanc);
+    /* MODIFIÉ : Texte blanc pour le contraste */
+    font-size: 42px;
+    margin-bottom: 40px;
+}
+
+.page-content h3 {
+    color: var(--rouge-vif);
+    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    max-width: 800px;
+    /* Centrage du h3 aussi */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.page-content p,
+.page-content ul {
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgba(255, 255, 255, 0.85);
+    /* MODIFIÉ : Blanc légèrement transparent pour une meilleure lisibilité */
+}
+
+.page-content ul {
+    list-style-type: disc;
+    padding-left: 40px;
+    /* Un peu plus de retrait pour la liste */
+}
+
+.page-content .page-image {
+    display: block;
+    max-width: 600px;
+    width: 100%;
+    border-radius: 10px;
+    margin: 40px auto;
+}
+
+
+/* Remplacez l'ancienne règle .page-content .button-1 par celle-ci */
+
+.page-content .button-1 {
+    /* Propriétés de layout (centrage, etc.) */
+    display: block;
+    width: 220px;
+    /* Un peu plus large pour le texte */
+    margin: 40px auto 0 auto;
+    text-align: center;
+    /* Propriétés visuelles du bouton (celles qui manquaient) */
+    color: var(--blanc);
+    background-color: transparent;
+    border: 2px solid var(--rouge-vif);
+    padding: 15px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+    /* S'assure qu'il n'y a pas de soulignement */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+
+/* Ajout de l'effet de survol pour ce bouton spécifique */
+
+.page-content .button-1:hover {
+    background-color: #d60022;
+    /* Le même rouge foncé que l'autre bouton */
+    transform: scale(1.05);
+}
+
+
+/* --- STYLE SPÉCIFIQUE POUR LA PAGE PÉDAGOGIE --- */
+
+
+/* Cible uniquement les paragraphes <p> de la page pedagogie */
+
+.page-pedagogie p {
+    text-align: justify;
+}
+
+
+/* --- AJOUT POUR LE CADRE SUR LES PAGES PÉDAGOGIE ET MATIÈRES --- */
+
+.page-pedagogie .cadre-texte,
+.page-matieres .cadre-texte {
+    border: 2px solid var(--rouge-vif);
+    border-radius: 10px;
+    padding: 40px;
+    /* On augmente un peu le padding pour donner de l'espace aux icônes */
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.03);
+    /* --- DÉBUT DE L'AJOUT DES ICÔNES DE FOND --- */
+    /* On liste les 4 images, séparées par des virgules */
+    background-image: url('images/icon-atom.png'), url('images/icon-book.png'), url('images/icon-globe.png'), url('images/icon-lightbulb.png');
+    /* On leur dit de ne pas se répéter */
+    background-repeat: no-repeat;
+    /* On définit la taille de chaque icône (dans le même ordre que la liste) */
+    background-size: 40px, /* taille de l'atome */
+    45px, /* taille du livre */
+    40px, /* taille du globe */
+    35px;
+    /* taille de l'ampoule */
+    /* On définit la position de chaque icône (la partie la plus amusante !) */
+    background-position: top 20px right 25px, /* Atome: en haut à droite */
+    bottom 20px left 25px, /* Livre: en bas à gauche */
+    top 80px left 20px, /* Globe: un peu plus bas à gauche */
+    bottom 70px right 20px;
+    /* Ampoule: un peu plus haut à droite */
+}
+
+
+/* --- AJOUT POUR L'EFFET DE FONDU SUR L'IMAGE DE LA PAGE PÉDAGOGIE --- */
+
+
+/* On applique les styles de base (centrage, taille) au conteneur */
+
+.image-container-fade {
+    position: relative;
+    /* Indispensable pour positionner l'effet par-dessus */
+    display: block;
+    max-width: 600px;
+    width: 100%;
+    border-radius: 10px;
+    margin: 40px auto;
+    overflow: hidden;
+    /* Assure que tout reste bien dans les coins arrondis */
+}
+
+
+/* L'image remplit 100% de son nouveau conteneur */
+
+.image-container-fade img {
+    display: block;
+    width: 100%;
+}
+
+
+/* C'est ici que la magie opère : on crée la superposition */
+
+.image-container-fade::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    /* Le dégradé couvrira la moitié inférieure de l'image */
+    /* Le dégradé va du transparent vers le bleu nuit du flyer */
+    background: linear-gradient(to top, var(--bleu-nuit) 0%, transparent 100%);
+    pointer-events: none;
+    /* Permet de cliquer "à travers" l'effet */
+}

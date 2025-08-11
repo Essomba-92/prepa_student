@@ -1,0 +1,67 @@
+<!-- Contenu complet pour le nouveau fichier pedagogie.html -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notre Pédagogie - Prepa Student</title>
+
+    <!-- Ces liens sont identiques à ceux de l'index pour garder le même style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="style" rel="stylesheet">
+</head>
+
+<body>
+    <!-- On réutilise le même header -->
+    <header>
+        <div class="wrapper">
+            <h1><a href="index">PREPA STUDENT<span>.</span></a></h1>
+            <nav>
+                <ul>
+                    <li><a href="index#main-image">Accueil</a></li>
+                    <li><a href="index#steps">Nos Services</a></li>
+                    <li><a href="index#possibilities">A Propos</a></li>
+                    <li><a href="index#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SECTION PRINCIPALE DE LA PAGE -->
+    <main class="page-content page-pedagogie">
+        <div class="wrapper">
+            <h2>Notre Pédagogie</h2>
+            <div class="cadre-texte">
+
+                <p><strong>POURQUOI NOUS?.</strong> Chez Prepa Student, nous sommes convaincus que chaque élève possède un potentiel unique qui ne demande qu'à être révélé. Oubliez les approches "taille unique". Notre pédagogie repose sur une idée simple
+                    mais puissante : un accompagnement entièrement personnalisé, car le chemin vers la réussite est différent pour chacun.Notre méthode est construite en trois temps : Écouter, Planifier, Agir. Nous commençons par un diagnostic précis
+                    pour identifier non seulement les lacunes, mais surtout les forces de l'élève. Ensuite, nous élaborons un plan d'action sur-mesure, avec des objectifs clairs et des méthodes interactives qui transforment la difficulté en curiosité.
+                    Nos tuteurs ne sont pas de simples répétiteurs ; ce sont des coachs qui inspirent et motivent.</p>
+
+            </div>
+            <!-- DÉBUT DE LA MODIFICATION -->
+            <div class="image-container-fade">
+                <img src="images/image-pedagogie.jpg" alt="Illustration de notre pédagogie">
+            </div>
+            <!-- FIN DE LA MODIFICATION -->
+
+            <a href="index" class="button-1">Retour à l'accueil</a>
+        </div>
+    </main>
+
+
+    <!-- On réutilise le même footer -->
+    <footer>
+        <div class="wrapper">
+            <p>Copyright © 2024 - PREPA STUDENT. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
